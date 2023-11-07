@@ -35,7 +35,6 @@ public class MovimentoObj3D : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector3(horizontal * velocidade,rb.velocity.y, rb.velocity.z);
-        //estaNoChao = !estaNoChao;
     }
 
     private bool isGrounded() 
