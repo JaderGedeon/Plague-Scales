@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class MovimentoObj3D : MonoBehaviour
 {
+    [Header("valores Pulo e Velocidade")]
+    [SerializeField]private float jump = 16f;
+    [SerializeField]private float velocidade = 8f;
     private float horizontal;
-    private float jump = 16f;
-    private float velocidade = 8f;
-    private bool isFacingRight = true;
-    private bool estaNoChao = true;
 
+    [Header("Parametros Groundcheck e rb")]
     public Rigidbody rb;
     public Transform chao;
     public LayerMask layerChao;
@@ -20,7 +20,7 @@ public class MovimentoObj3D : MonoBehaviour
     {
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        if (Input.GetButtonDown("Jump") && estaNoChao)
+        if (Input.GetButtonDown("Jump") && !isGrounded())
         {
             rb.velocity = new Vector3(rb.velocity.x, jump,0);
         }
@@ -30,32 +30,17 @@ public class MovimentoObj3D : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y *0.5f,0);
         }
 
-        estaNoChao = !estaNoChao;
-        //Flip();
     }
 
     private void FixedUpdate()
     {
         rb.velocity = new Vector3(horizontal * velocidade,rb.velocity.y, rb.velocity.z);
- 
+        //estaNoChao = !estaNoChao;
     }
 
-    /*private bool chaoDetecta() 
+    private bool isGrounded() 
     {
-        
-        return Physics2D.OverlapCircle(chao.position,0.2f,layerChao);
-    }/*
-
-    /*private void Flip() 
-    {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f) 
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 scalaLocal = transform.localScale;
-            scalaLocal.x *= -1f; 
-            transform.localScale = scalaLocal;
-        
-        }
-    
-    }*/
+        RaycastHit hit;
+        return Physics.Raycast(chao.position, transform.TransformDirection(Vector3.down),out hit, layerChao);
+    }
 }
