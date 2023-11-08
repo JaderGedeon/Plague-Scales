@@ -121,11 +121,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03180646e6ffb8343ac1917368124e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jump: 10
+  velocidade: 8
   rb: {fileID: 407675180554622059}
   chao: {fileID: 8643549928721276036}
   layerChao:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 241
 --- !u!54 &407675180554622059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,7 +138,7 @@ Rigidbody:
   serializedVersion: 4
   m_Mass: 4
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}

@@ -674,7 +674,7 @@ PrefabInstance:
     - target: {fileID: 5696679009192638387, guid: 9c09f77486db2ed498e3ee38c3436eb7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.7836
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 5696679009192638387, guid: 9c09f77486db2ed498e3ee38c3436eb7,
         type: 3}
@@ -853,7 +853,7 @@ PrefabInstance:
     - target: {fileID: 5696679009192638387, guid: 9c09f77486db2ed498e3ee38c3436eb7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.4143
+      value: 3.82
       objectReference: {fileID: 0}
     - target: {fileID: 5696679009192638387, guid: 9c09f77486db2ed498e3ee38c3436eb7,
         type: 3}
@@ -917,12 +917,12 @@ PrefabInstance:
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.29
+      value: 4.93
       objectReference: {fileID: 0}
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.73
+      value: -1.69
       objectReference: {fileID: 0}
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
@@ -968,6 +968,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ScalableCrate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7163928267521255613, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1224,7 +1229,7 @@ PrefabInstance:
     - target: {fileID: 351314105224606862, guid: 61d823965dc8444479847393044f5ed0,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8313569
+      value: 1.49
       objectReference: {fileID: 0}
     - target: {fileID: 351314105224606862, guid: 61d823965dc8444479847393044f5ed0,
         type: 3}
@@ -1385,13 +1390,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.97
+      value: -4.78
       objectReference: {fileID: 0}
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.36
+      value: 0.91
       objectReference: {fileID: 0}
     - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
@@ -1433,6 +1448,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1898311988052480271, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4189662453954490883, guid: 56e224d9a01198e4f941c427c04da2b2,
         type: 3}
       propertyPath: m_Material
@@ -1458,6 +1478,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: ScalableCrate
       objectReference: {fileID: 0}
+    - target: {fileID: 7163928267521255613, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8828909826771899175, guid: 56e224d9a01198e4f941c427c04da2b2,
+        type: 3}
+      propertyPath: m_scaleSpeed
+      value: 0.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1477,27 +1507,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2050623220}
     m_Modifications:
-    - target: {fileID: 407675180554622059, guid: 5f25d927d2024814e987efe1065c99c6,
-        type: 3}
-      propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 407675180554622059, guid: 5f25d927d2024814e987efe1065c99c6,
-        type: 3}
-      propertyPath: m_AngularDrag
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4257980590915420729, guid: 5f25d927d2024814e987efe1065c99c6,
         type: 3}
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 5189230083145781316, guid: 5f25d927d2024814e987efe1065c99c6,
-        type: 3}
-      propertyPath: m_Material
-      value: 
-      objectReference: {fileID: 13400000, guid: 645edc812e729314d9032a0a02fc325d,
-        type: 2}
     - target: {fileID: 7356228766622708020, guid: 5f25d927d2024814e987efe1065c99c6,
         type: 3}
       propertyPath: m_LocalPosition.x
