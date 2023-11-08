@@ -30,6 +30,7 @@ public class MovimentoObj3D : MonoBehaviour
             rb.velocity = new Vector3(rb.velocity.x,rb.velocity.y *0.5f,0);
         }
 
+        print(isGrounded());
     }
 
     private void FixedUpdate()
@@ -40,6 +41,6 @@ public class MovimentoObj3D : MonoBehaviour
     private bool isGrounded() 
     {
         RaycastHit hit;
-        return Physics.Raycast(chao.position, transform.TransformDirection(Vector3.down),out hit, layerChao);
+        return Physics.Raycast(chao.position, transform.TransformDirection(Vector3.down),out hit,0.1f, layerChao);
     }
 }
