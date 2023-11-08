@@ -69,14 +69,14 @@ public abstract class BaseScalable : MonoBehaviour
         bool xCondition = (minMaxXAxis.x != 0) && (minMaxXAxis.y != 0);
         bool yCondition = (minMaxYAxis.x != 0) && (minMaxYAxis.y != 0);
 
-        Debug.Log($"X: {minMaxXAxis}, Y: {minMaxYAxis}");
+        //Debug.Log($"X: {minMaxXAxis}, Y: {minMaxYAxis}");
 
         return xCondition || yCondition;
     }
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.layer != 6)
+        if (collider.isTrigger)
             return;
 
         if (!m_colliderList.Contains(collider))
