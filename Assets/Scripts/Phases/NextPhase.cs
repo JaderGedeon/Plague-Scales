@@ -15,4 +15,20 @@ public class NextPhase : MonoBehaviour
             print("Next fase!");
         }
     }
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    public void resetTheGame() 
+    {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        
+    }
 }
