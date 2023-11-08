@@ -14,13 +14,13 @@ public class MovimentoObj3D : MonoBehaviour
 
     [Header("Parametros Groundcheck e rb")]
     public Rigidbody rb;
-    public Transform chao;
     public LayerMask layerMask;
 
 
     // Update is called once per frame
     void Update()
     {
+        //movimentação e pulo
         horizontal = Input.GetAxisRaw("Horizontal");
         if (Input.GetButtonDown("Jump") && grounded)
         {
@@ -31,9 +31,8 @@ public class MovimentoObj3D : MonoBehaviour
         {
             rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * 0.5f, 0);
         }
-        print(grounded);
 
-
+        //Raycast para fazer o groundCheck
         RaycastHit hit;
         if (Physics.Raycast(transform.position, -transform.up, out hit, jumpCheck, layerMask))
         {
@@ -47,6 +46,7 @@ public class MovimentoObj3D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        //adicionando velocidade para a movimentação do jogador
         rb.velocity = new Vector3(horizontal * velocidade,rb.velocity.y, rb.velocity.z);
     }
 
