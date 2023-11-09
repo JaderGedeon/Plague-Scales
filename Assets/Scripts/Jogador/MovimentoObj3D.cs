@@ -9,7 +9,7 @@ public class MovimentoObj3D : MonoBehaviour
     [SerializeField]private float jump = 16f;
     [SerializeField]private float jumpCheck;
     [SerializeField]private float velocidade = 8f;
-    [SerializeField]private bool grounded = false;
+    private bool grounded = false;
     private float horizontal;
 
     [Header("Parametros Groundcheck e rb")]
