@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/proxima fase.unity
     guid: 20758861f3a812541a970b7916b4c957
+  - enabled: 1
+    path: "Assets/Scenes/Level \xCDcaro.unity"
+    guid: d5623b7647f470249a1f630dd5e2fbbb
   m_configObjects: {}

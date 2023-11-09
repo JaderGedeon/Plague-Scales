@@ -3,51 +3,51 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody))]
 public class MovimentoObj3D : MonoBehaviour
 {
     [Header("valores Pulo e Velocidade")]
-    [SerializeField]private float jump = 16f;
-    [SerializeField]private float jumpCheck;
-    [SerializeField]private float velocidade = 8f;
-    private bool grounded = false;
-    private float horizontal;
+    [SerializeField] private float m_jump = 16f;
+    [SerializeField] private float m_jumpCheck = 1f;
+    [SerializeField] private float m_velocidade = 8f;
+    private float m_horizontal;
+    private Rigidbody m_rb;
 
-    [Header("Parametros Groundcheck e rb")]
-    public Rigidbody rb;
-    public LayerMask layerMask;
+    private const string k_Horizontal = "Horizontal";
+    private const string k_Jump = "Jump";
 
+    [Header("Parametros Groundcheck")]
+    [SerializeField]
+    private LayerMask m_layerMask;
+
+    private void Start()
+    {
+        m_rb = GetComponent<Rigidbody>();
+    }
 
     // Update is called once per frame
     void Update()
     {
         //movimentação e pulo
-        horizontal = Input.GetAxisRaw("Horizontal");
-        if (Input.GetButtonDown("Jump") && grounded)
+        m_horizontal = Input.GetAxisRaw(k_Horizontal);
+
+        if (!Input.GetButtonDown(k_Jump))
+            return;
+
+        if (Physics.Raycast(transform.position, -transform.up, m_jumpCheck, m_layerMask))
         {
-            rb.velocity = new Vector3(rb.velocity.x, jump, 0);
+            m_rb.velocity = new Vector3(m_rb.velocity.x, m_jump, 0);
         }
 
-        if (Input.GetButtonDown("Jump") && rb.velocity.y > 0f)
+        if (m_rb.velocity.y > 0f)
         {
-            rb.velocity = new Vector3(rb.velocity.x, rb.velocity.y * 0.5f, 0);
-        }
-
-        //Raycast para fazer o groundCheck
-        RaycastHit hit;
-        if (Physics.Raycast(transform.position, -transform.up, out hit, jumpCheck, layerMask))
-        {
-            grounded = true;
-        }
-        else
-        {
-            grounded = false;
+            m_rb.velocity = new Vector3(m_rb.velocity.x, m_rb.velocity.y * 0.5f, 0);
         }
     }
 
     private void FixedUpdate()
     {
         //adicionando velocidade para a movimentação do jogador
-        rb.velocity = new Vector3(horizontal * velocidade,rb.velocity.y, rb.velocity.z);
+        m_rb.velocity = new Vector3(m_horizontal * m_velocidade,m_rb.velocity.y, m_rb.velocity.z);
     }
-
 }

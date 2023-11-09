@@ -5,29 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class NextPhase : MonoBehaviour
 {
-    public string phaseName;
+    private const string k_Player = "Player";
 
     private void OnTriggerEnter(Collider other)
     {
-        if (phaseName == null)
-            return;
-
-        if (other.gameObject.tag == "Player") 
+        if (other.gameObject.CompareTag(k_Player)) 
         {
-            SceneManager.LoadScene(phaseName);
-            print("Next fase!");
+            GameManager.Instance.GoToNextLevel();
         }
-    }
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-    }
-
-    public void resetTheGame() 
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
     }
 }
