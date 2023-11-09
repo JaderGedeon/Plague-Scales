@@ -9,6 +9,9 @@ public class NextPhase : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if (phaseName == null)
+            return;
+
         if (other.gameObject.tag == "Player") 
         {
             SceneManager.LoadScene(phaseName);
@@ -17,7 +20,7 @@ public class NextPhase : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.K))
+        if (Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
@@ -25,10 +28,6 @@ public class NextPhase : MonoBehaviour
 
     public void resetTheGame() 
     {
-        if (Input.GetKeyDown(KeyCode.K))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
-        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);   
     }
 }
