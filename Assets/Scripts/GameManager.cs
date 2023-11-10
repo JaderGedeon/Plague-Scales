@@ -6,14 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField]
-    private int m_currentLevelIndex = 0;
-
-    [SerializeField]
-    private GameObject m_currentLevel;
-
-    [SerializeField]
-    private List<GameObject> m_levels;
+    [SerializeField] private int m_currentLevelIndex = 0;
+    [SerializeField] private GameObject m_currentLevel;
+    [SerializeField] private List<GameObject> m_levels;
 
     public static GameManager Instance { get; private set; }
 

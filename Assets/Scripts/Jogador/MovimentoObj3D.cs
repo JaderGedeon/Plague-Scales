@@ -17,8 +17,7 @@ public class MovimentoObj3D : MonoBehaviour
     private const string k_Jump = "Jump";
 
     [Header("Parametros Groundcheck")]
-    [SerializeField]
-    private LayerMask m_layerMask;
+    [SerializeField] private LayerMask m_layerMask;
 
     private void Start()
     {

@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 5189230083145781316}
   - component: {fileID: 9192686186990629041}
   - component: {fileID: 407675180554622059}
-  m_Layer: 0
+  - component: {fileID: 1409859373740137065}
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -120,13 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 03180646e6ffb8343ac1917368124e8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jump: 16
-  jumpCheck: 1
-  velocidade: 8
-  rb: {fileID: 407675180554622059}
-  layerMask:
+  m_jump: 16
+  m_jumpCheck: 1
+  m_velocidade: 8
+  m_layerMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 192
 --- !u!54 &407675180554622059
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -154,6 +154,22 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 120
   m_CollisionDetection: 3
+--- !u!114 &1409859373740137065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4257980590915420729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a66f0d85a877e541a413913c0b4aec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_artifactHandler:
+    ArtifactType: 0
+  m_influenceRadiusRenderer: {fileID: 2383780102547013446}
+  m_droppedArtifactCooldown: 2
 --- !u!1 &7487122084623786816
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,8 +180,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5711686759068657509}
   - component: {fileID: 466176801099081363}
-  - component: {fileID: 8391272254269074391}
-  m_Layer: 0
+  - component: {fileID: 7103625898419303348}
+  - component: {fileID: 2383780102547013446}
+  m_Layer: 8
   m_Name: Influence Radius
   m_TagString: Untagged
   m_Icon: {fileID: 419385456094870383, guid: 0000000000000000d000000000000000, type: 0}
@@ -182,8 +199,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 7356228766622708020}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -206,19 +223,55 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 3
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8391272254269074391
-MonoBehaviour:
+--- !u!33 &7103625898419303348
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7487122084623786816}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a668b4af6d39841924de5de7bf4e83, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_artifactHandler:
-    ArtifactType: 0
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2383780102547013446
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7487122084623786816}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: e509101bc7f3b2d4fbebd33342fda8cd, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}

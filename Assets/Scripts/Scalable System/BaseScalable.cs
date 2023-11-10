@@ -89,10 +89,3 @@ public abstract class BaseScalable : MonoBehaviour
             m_colliderList.Remove(collider);
     }
 }
-
-[System.Serializable]
-public class ArtifactHandler
-{
-    [SerializeField]
-    public ArtifactType ArtifactType = ArtifactType.None;
-}

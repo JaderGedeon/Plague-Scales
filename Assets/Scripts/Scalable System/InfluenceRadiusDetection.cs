@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class InfluenceRadiusDetection : MonoBehaviour
 {
-    [SerializeField]
-    private ArtifactHandler m_artifactHandler = new();
+    [SerializeField] private ArtifactHandler m_artifactHandler = new();
 
     private void Update()
     {
