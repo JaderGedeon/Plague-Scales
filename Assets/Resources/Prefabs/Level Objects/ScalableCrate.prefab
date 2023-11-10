@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6077256055863919999}
   - component: {fileID: 4411830171811932708}
   - component: {fileID: 8828909826771899175}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ScalableCrate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
