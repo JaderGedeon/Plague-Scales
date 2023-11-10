@@ -156,6 +156,7 @@ MonoBehaviour:
   m_currentLevel: {fileID: 0}
   m_levels:
   - {fileID: 490778502727034910, guid: d0b263507826c2043a897c5ce19cdedc, type: 3}
+  - {fileID: 490778502727034910, guid: a65af659c4568d346979c7e99e3e2a5b, type: 3}
 --- !u!224 &1254477933
 RectTransform:
   m_ObjectHideFlags: 0
