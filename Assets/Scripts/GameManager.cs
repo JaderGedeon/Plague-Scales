@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         {
             DestroyAndLoadLevel();
         }
+
+  
     }
 
     public void GoToNextLevel()
