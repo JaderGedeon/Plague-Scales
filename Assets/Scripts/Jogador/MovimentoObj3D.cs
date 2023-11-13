@@ -12,6 +12,7 @@ public class MovimentoObj3D : MonoBehaviour
     [SerializeField] private float m_velocidade = 8f;
     private float m_horizontal;
     private Rigidbody m_rb;
+    private Transform m_model;
 
     private const string k_Horizontal = "Horizontal";
     private const string k_Jump = "Jump";
@@ -21,6 +22,7 @@ public class MovimentoObj3D : MonoBehaviour
 
     private void Start()
     {
+        m_model = GetComponent<Transform>().GetChild(0);
         m_rb = GetComponent<Rigidbody>();
     }
 
@@ -29,7 +31,12 @@ public class MovimentoObj3D : MonoBehaviour
     {
         //movimentação e pulo
         m_horizontal = Input.GetAxisRaw(k_Horizontal);
-
+        //mover o modelo diacordo com a direção!
+        if (Input.GetKeyDown(KeyCode.D))
+            m_model.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+        if (Input.GetKeyDown(KeyCode.A))
+            m_model.rotation = Quaternion.Euler(new Vector3(0, -90, 0));
+        
         if (!Input.GetButtonDown(k_Jump))
             return;
 
