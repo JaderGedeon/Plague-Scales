@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
+    private float m_timer = 0f;
 
     public static GameManager Instance { get; private set; }
 
@@ -38,12 +39,18 @@ public class GameManager : MonoBehaviour
             GoToNextLevel();
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKey(KeyCode.R))
         {
-            DestroyAndLoadLevel();
+            m_timer += 1.5f * Time.deltaTime;
+            if (m_timer > 3)
+            {
+                m_timer = 0f;
+                DestroyAndLoadLevel();
+            }
         }
+        if(!Input.GetKey(KeyCode.R))
+            m_timer = 0f;
 
-  
     }
 
     public void GoToNextLevel()
