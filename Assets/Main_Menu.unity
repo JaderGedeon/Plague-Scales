@@ -4994,9 +4994,9 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1301839926}
-        m_TargetAssemblyTypeName: Options_Menu, Assembly-CSharp
-        m_MethodName: setresolution
+      - m_Target: {fileID: 1301839927}
+        m_TargetAssemblyTypeName: Resolution_Settings, Assembly-CSharp
+        m_MethodName: SetResolution
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5189,6 +5189,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1301839925}
   - component: {fileID: 1301839926}
+  - component: {fileID: 1301839927}
   m_Layer: 5
   m_Name: Options_Menu
   m_TagString: Untagged
@@ -5233,6 +5234,19 @@ MonoBehaviour:
   music: {fileID: 24100000, guid: a56757d88da21ef42a9e776828b3b837, type: 2}
   SFX: {fileID: 24100000, guid: c870a2ed769db774c96d0244f9f02e36, type: 2}
   resolution_dropdown: {fileID: 1277232068}
+--- !u!114 &1301839927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301839924}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10b91c3c1d787744caa5d546cbb19239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resoldropdown: {fileID: 1277232068}
 --- !u!1 &1307367121
 GameObject:
   m_ObjectHideFlags: 0

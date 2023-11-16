@@ -25,44 +25,6 @@ public class Options_Menu : MonoBehaviour
         /*Dropdown de Resoluções*/
             public TMP_Dropdown resolution_dropdown;
     /* #################################################################### Configurações de Tela ########################################################################### */
-        /*### Resolução de Tela ###*/
-        private void Start()
-        {
-            resolutions = Screen.resolutions;
-            /*Elimina as opções padrão do Dropdown*/
-                resolution_dropdown.ClearOptions();
-            /*Lista que vai receber as resoluções da tela*/
-                List<string> resolution_list = new List<string>();
-            /*Variavel que receberá o Index da Resolução atual*/
-                int currentResolution = 0;
-            /*Preenche a lista com o conteúdo do Array*/
-                for (int i = 0; i < resolutions.Length; i++)
-                {
-                                     
-                    string option = resolutions[i].width + "x" + resolutions[i].height + " " + resolutions[i].refreshRateRatio + "Hz";
-                    resolution_list.Add(option);
-                    
-                    
-                    /*Verifica em que posição da lista está a resolução atual da tela registra o Index*/
-                    if (resolutions[i].width == Screen.currentResolution.width && resolutions[i].height == Screen.currentResolution.height)
-                    {
-                        /*Variavel que recebe o index da resolução atual*/
-                            currentResolution = i;
-                    }
-                }
-            /*Insere os elementos da lista no Dropdown*/
-                resolution_dropdown.AddOptions(resolution_list);
-            /*Seta o Index da resolução atual da tela como a posição atual do Dropdown*/
-                resolution_dropdown.value = currentResolution;
-
-        }
-
-        public void setresolution(int resolutionInd)
-        {
-            Resolution resol = resolutions[resolutionInd];
-            Screen.SetResolution(resol.width, resol.height, Screen.fullScreen); 
-        }
-
     /*### Modo de Tela ###*/
     public void ScreenMode(int smode)
             {
