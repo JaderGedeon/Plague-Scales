@@ -25,13 +25,13 @@ public class EneyMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //para mover de ponto A a ponto b e rotanionar o jogador
+        //para mover de ponto A a ponto B e rotanionar o jogador
         if (transform.position == m_movePoints[m_indexTarget].position)
         {
             transform.rotation = Quaternion.Euler(0,180,0);
             IncreaseTargetInt();
         }
-        //mover o jogodor!
+        //mover o inimigo!
         transform.position = Vector3.MoveTowards(transform.position, m_movePoints[m_indexTarget].position,m_speed * Time.deltaTime);
 
         //poder pular quando encontrar uma parede
@@ -51,4 +51,14 @@ public class EneyMove : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, 0);
         }
     }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            print("morreu");
+        }
+    }
+
 }
