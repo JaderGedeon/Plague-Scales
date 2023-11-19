@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
+    public static EnemyBullet Instance { get; private set; }
+    public bool SideBullet;
     [SerializeField] private Transform m_bulletPosition;
 
     private float m_timer = 3f;
@@ -12,6 +15,7 @@ public class EnemyBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Instance = this;
         m_temptime = m_timer;
     }
 
@@ -32,4 +36,5 @@ public class EnemyBullet : MonoBehaviour
 
         }
     }
+
 }

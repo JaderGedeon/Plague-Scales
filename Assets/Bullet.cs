@@ -15,15 +15,28 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        m_rb.velocity = -Vector3.right * m_speed;
+        if (EnemyBullet.Instance.SideBullet)
+        {
+            m_rb.velocity = -Vector3.right * m_speed;
+        }
+        else
+        {
+            m_rb.velocity = Vector3.right * m_speed;
+        }
+
     }
     // Update is called once per frame
-
     private void OnCollisionEnter(Collision collision)
     {
+        if (collision == null)
+            return;
+
         if (collision.gameObject.layer == 6)
-        {
             gameObject.SetActive(false);
+        
+        if (collision.gameObject.CompareTag("Player")) 
+        {
+            print("morreu");
         }
     }
 }

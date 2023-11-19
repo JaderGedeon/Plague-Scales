@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7ee5b0df3eada4e95dd7477ec6705a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SideBullet: 1
   m_bulletPosition: {fileID: 1984474563}
 --- !u!114 &326720470
 MonoBehaviour:
