@@ -6,7 +6,9 @@ using UnityEngine;
 public class EnemyBullet : MonoBehaviour
 {
     public static EnemyBullet Instance { get; private set; }
-    public bool SideBullet;
+    //True = Left False = Right
+    //public bool SideBullet;
+    [field: SerializeField] public BulletSide SideBullets { get; private set; }
     [SerializeField] private Transform m_bulletPosition;
 
     private float m_timer = 3f;

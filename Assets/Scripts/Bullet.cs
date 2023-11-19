@@ -15,14 +15,25 @@ public class Bullet : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (EnemyBullet.Instance.SideBullet)
+        switch (EnemyBullet.Instance.SideBullets)
+        {
+            case BulletSide.Left:
+                m_rb.velocity = -Vector3.right * m_speed;
+                break;
+            case BulletSide.Right:
+                m_rb.velocity = Vector3.right * m_speed;
+                break;
+            default:
+                break;
+        }
+        /*if (EnemyBullet.Instance.sideBullet.Left)
         {
             m_rb.velocity = -Vector3.right * m_speed;
         }
         else
         {
             m_rb.velocity = Vector3.right * m_speed;
-        }
+        }*/
 
     }
     // Update is called once per frame
