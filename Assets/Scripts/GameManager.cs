@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
+    private ResetCounter m_reset;
 
     public static GameManager Instance { get; private set; }
 
@@ -41,6 +42,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R))
         {
             DestroyAndLoadLevel();
+            m_reset.IncrementCounter();
         }
 
   
