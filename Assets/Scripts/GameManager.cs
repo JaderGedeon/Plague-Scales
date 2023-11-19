@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     private ResetCounter m_reset;
 
     public static GameManager Instance { get; private set; }
+    public int counter { get; set; }
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         m_currentLevel = Instantiate(m_levels[m_currentLevelIndex]);
+        m_reset = FindObjectOfType<ResetCounter>();
     }
 
     private void Update()
@@ -44,8 +46,6 @@ public class GameManager : MonoBehaviour
             DestroyAndLoadLevel();
             m_reset.IncrementCounter();
         }
-
-  
     }
 
     public void GoToNextLevel()

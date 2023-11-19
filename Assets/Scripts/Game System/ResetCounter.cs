@@ -5,18 +5,23 @@ using TMPro;
 
 public class ResetCounter : MonoBehaviour
 {
-    public TextMeshPro counterText;
-    [SerializeField] private int m_counter = 0;
+    public TextMeshProUGUI counterText;
+    public GameManager gameManager;
 
-    public int IncrementCounter() { return m_counter += 1; }
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     void Update()
     {
         ShowCounterInScene();
     }
 
+    public int IncrementCounter() { return gameManager.counter += 1; }
+
     private void ShowCounterInScene()
     {
-        counterText.text = string.Format("Resets + {0}", m_counter);
+        counterText.text = string.Format("Reset: {0}", gameManager.counter);
     }
 }
