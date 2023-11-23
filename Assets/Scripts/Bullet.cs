@@ -27,14 +27,6 @@ public class Bullet : MonoBehaviour
             default:
                 break;
         }
-        /*if (EnemyBullet.Instance.sideBullet.Left)
-        {
-            m_rb.velocity = -Vector3.right * m_speed;
-        }
-        else
-        {
-            m_rb.velocity = Vector3.right * m_speed;
-        }*/
 
     }
     // Update is called once per frame
