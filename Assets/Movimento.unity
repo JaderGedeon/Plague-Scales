@@ -1152,6 +1152,12 @@ PrefabInstance:
       propertyPath: <SideBullets>k__BackingField
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3031572987503413890, guid: b03430d8c961a8e4db03cb0122238ac3,
+        type: 3}
+      propertyPath: m_bullet
+      value: 
+      objectReference: {fileID: 232978689219011723, guid: dff8207da495d12408ae12ad536d3ce5,
+        type: 3}
     - target: {fileID: 3783049598898622720, guid: b03430d8c961a8e4db03cb0122238ac3,
         type: 3}
       propertyPath: m_Size.x
