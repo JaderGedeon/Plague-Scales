@@ -6,6 +6,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_speed = 10;
 
+
     private Rigidbody m_rb;
     // Start is called before the first frame update
     void Start()
@@ -47,7 +48,7 @@ public class Bullet : MonoBehaviour
         
         if (collision.gameObject.CompareTag("Player")) 
         {
-            print("morreu");
+            GameManager.Instance.DestroyAndLoadLevel();
         }
     }
 }

@@ -55,9 +55,9 @@ public class EneyMove : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            print("morreu");
+            GameManager.Instance.DestroyAndLoadLevel();
         }
     }
 

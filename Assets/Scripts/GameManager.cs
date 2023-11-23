@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour
         DestroyAndLoadLevel();
     }
 
-    private void DestroyAndLoadLevel()
+    public void DestroyAndLoadLevel()
     {
         Destroy(m_currentLevel);
         m_currentLevel = Instantiate(m_levels[m_currentLevelIndex]);
