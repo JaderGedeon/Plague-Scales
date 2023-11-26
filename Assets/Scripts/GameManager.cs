@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject m_pauseMenu;
+    [SerializeField] private GameObject m_mainMenu;
+    [SerializeField] private Button m_continueButton;
+    [SerializeField] private GameObject m_pauseButton;
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
@@ -101,11 +105,36 @@ public class GameManager : MonoBehaviour
 
     public void GoToMenuInPause() 
     {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene("Main_Menu");
+        Time.timeScale = 0f;
+        m_mainMenu.SetActive(true);
+        m_pauseMenu.SetActive(false);
+        m_pauseButton.SetActive(false);
     }
     public void QuitInMenuGame() 
     {
         Application.Quit();
+    }
+
+    public void NewGame()
+    {
+        if (m_currentLevelIndex != 0)
+        {
+            m_currentLevelIndex = 0;            
+        }
+        DestroyAndLoadLevel();
+        Time.timeScale = 1f;
+        IsPaused = false;
+        m_continueButton.interactable = true;
+        m_mainMenu.SetActive(false);
+        m_pauseButton.SetActive(true);
+    }
+
+    public void Continue()
+    {
+        DestroyAndLoadLevel();
+        Time.timeScale = 1f;
+        IsPaused = false;
+        m_mainMenu.SetActive(false);
+        m_pauseButton.SetActive(true);
     }
 }
