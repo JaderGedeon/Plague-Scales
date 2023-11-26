@@ -6,12 +6,15 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    [SerializeField] private GameObject m_pauseMenu;
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
     private float m_timer = 0f;
 
+
     public static GameManager Instance { get; private set; }
+    public static bool IsPaused { get; private set; }
 
     private void Awake()
     {
@@ -51,6 +54,17 @@ public class GameManager : MonoBehaviour
         if(!Input.GetKey(KeyCode.R))
             m_timer = 0f;
 
+        if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            if (IsPaused)
+            {
+                ResumeInGameMenu();
+            }
+            else 
+            {
+                PauseInGameMenu();
+            }
+        }
     }
 
     public void GoToNextLevel()
@@ -69,5 +83,29 @@ public class GameManager : MonoBehaviour
     {
         Destroy(m_currentLevel);
         m_currentLevel = Instantiate(m_levels[m_currentLevelIndex]);
+    }
+
+    public void PauseInGameMenu() 
+    {
+        m_pauseMenu.SetActive(true);
+        Time.timeScale = 0f;
+        IsPaused = true;
+    }
+
+    public void ResumeInGameMenu() 
+    {
+        m_pauseMenu.SetActive(false);
+        Time.timeScale = 1f;
+        IsPaused = false;
+    }
+
+    public void GoToMenuInPause() 
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("Main_Menu");
+    }
+    public void QuitInMenuGame() 
+    {
+        Application.Quit();
     }
 }

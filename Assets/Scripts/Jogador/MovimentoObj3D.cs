@@ -33,37 +33,39 @@ public class MovimentoObj3D : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // raycast do jogador
-        bool raycast = Physics.Raycast(transform.position, -transform.up, m_jumpCheck, m_layerMask);
-        //função para rotacionar o player
-        RotatePlayer();
-        //movimentação e pulo
-        m_horizontal = Input.GetAxisRaw(k_Horizontal);
-
-        //test de pular
-        if (Input.GetButtonDown(k_Jump)) 
+        if (!GameManager.IsPaused)
         {
-            if (!m_airjumping)
+            // raycast do jogador
+            bool raycast = Physics.Raycast(transform.position, -transform.up, m_jumpCheck, m_layerMask);
+            //função para rotacionar o player
+            RotatePlayer();
+            //movimentação e pulo
+            m_horizontal = Input.GetAxisRaw(k_Horizontal);
+
+            //test de pular
+            if (Input.GetButtonDown(k_Jump))
             {
-                m_timer = m_temptime;
-                m_airjumping = true;
-                m_rb.velocity = new Vector3(m_rb.velocity.x, m_jump, 0);
+                if (!m_airjumping)
+                {
+                    m_timer = m_temptime;
+                    m_airjumping = true;
+                    m_rb.velocity = new Vector3(m_rb.velocity.x, m_jump, 0);
+                }
+                if (m_rb.velocity.y > 0f)
+                {
+                    m_rb.velocity = new Vector3(m_rb.velocity.x, m_rb.velocity.y * 0.5f, 0);
+                }
             }
-            if (m_rb.velocity.y > 0f)
+            if (m_airjumping)
             {
-                m_rb.velocity = new Vector3(m_rb.velocity.x, m_rb.velocity.y * 0.5f, 0);
+                //timer de testar para poder pular quando sai de um objeto!
+                m_timer -= Time.deltaTime;
+                if (m_timer < 0 && raycast)
+                {
+                    m_airjumping = false;
+                }
             }
         }
-        if (m_airjumping)
-        {
-            //timer de testar para poder pular quando sai de um objeto!
-            m_timer -= Time.deltaTime;
-            if (m_timer < 0 && raycast)
-            {
-                m_airjumping = false;
-            }
-        }
-
     }
 
     private void FixedUpdate()
