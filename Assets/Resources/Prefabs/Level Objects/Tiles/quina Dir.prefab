@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 701607436369431270}
   - component: {fileID: 4701445610089687745}
   - component: {fileID: 7856252045556605280}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: quina Dir
   m_TagString: Untagged
   m_Icon: {fileID: 0}

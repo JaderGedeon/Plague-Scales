@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7049028236768431471}
   - component: {fileID: 6232126742438920906}
   - component: {fileID: 8185293461656188416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: quinaa
   m_TagString: Untagged
   m_Icon: {fileID: 0}

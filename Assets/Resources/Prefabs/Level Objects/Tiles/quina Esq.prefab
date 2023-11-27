@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8854134412052957286}
   - component: {fileID: 1439823821040824206}
   - component: {fileID: 8931035349992044533}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: quina Esq
   m_TagString: Untagged
   m_Icon: {fileID: 0}
