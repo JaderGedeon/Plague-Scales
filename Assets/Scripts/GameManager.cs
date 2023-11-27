@@ -129,12 +129,12 @@ public class GameManager : MonoBehaviour
         m_pauseButton.SetActive(true);
     }
 
-    public void Continue()
+    /*public void Continue()
     {
         DestroyAndLoadLevel();
         Time.timeScale = 1f;
         IsPaused = false;
         m_mainMenu.SetActive(false);
         m_pauseButton.SetActive(true);
-    }
+    }*/
 }
