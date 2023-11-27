@@ -14,11 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
+    private ResetCounter m_reset;
     private float m_timer = 0f;
 
 
     public static GameManager Instance { get; private set; }
     public static bool IsPaused { get; private set; }
+    public int counter { get; set; }
 
     private void Awake()
     {
@@ -37,6 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         m_currentLevel = Instantiate(m_levels[m_currentLevelIndex]);
+        m_reset = FindObjectOfType<ResetCounter>();
     }
 
     private void Update()
@@ -53,6 +56,7 @@ public class GameManager : MonoBehaviour
             {
                 m_timer = 0f;
                 DestroyAndLoadLevel();
+                m_reset.IncrementCounter();
             }
         }
         if(!Input.GetKey(KeyCode.R))
