@@ -51,14 +51,18 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKey(KeyCode.R))
         {
-            m_timer += 1.5f * Time.deltaTime;
-            if (m_timer > 3)
-            {
-                m_timer = 0f;
-                FindObjectOfType<AudioManager>().Play("Restart");
-                DestroyAndLoadLevel();
-                m_reset.IncrementCounter();
-            }
+            FindObjectOfType<AudioManager>().Play("Restart");
+            DestroyAndLoadLevel();
+            m_reset.IncrementCounter();
+
+            //m_timer += 1.5f * Time.deltaTime;
+            //if (m_timer > 3)
+            //{
+            //    m_timer = 0f;
+            //    FindObjectOfType<AudioManager>().Play("Restart");
+            //    DestroyAndLoadLevel();
+            //    m_reset.IncrementCounter();
+            //}
         }
         if(!Input.GetKey(KeyCode.R))
             m_timer = 0f;

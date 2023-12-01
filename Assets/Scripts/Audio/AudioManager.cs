@@ -47,7 +47,6 @@ public class AudioManager : MonoBehaviour
         if (randomRoar < 3 &&  m_timer > 20)
         {
             Play("Roar");
-            print("Com Roar");
             m_timer = 0;
         }
     }

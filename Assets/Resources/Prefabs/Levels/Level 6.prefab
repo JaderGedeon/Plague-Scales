@@ -20192,7 +20192,7 @@ PrefabInstance:
     - target: {fileID: 2334039924365846687, guid: 29114c8912fd6304f89c208cbafc6ec7,
         type: 3}
       propertyPath: m_jump
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5739595452364934743, guid: 29114c8912fd6304f89c208cbafc6ec7,
         type: 3}
