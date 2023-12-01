@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public static EnemyBullet Instance { get; private set; }
 
     [field: SerializeField] public BulletSide SideBullets { get; private set; }
 
@@ -20,7 +19,6 @@ public class EnemyBullet : MonoBehaviour
         m_Left = GetComponentInChildren<Transform>().GetChild(0);
         m_Right = GetComponentInChildren<Transform>().GetChild(1);
         m_model = GetComponentInChildren<Transform>().GetChild(2);
-        Instance = this;
         m_temptime = m_timer;
 
     }

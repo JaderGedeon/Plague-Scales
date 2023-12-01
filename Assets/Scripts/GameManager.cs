@@ -44,10 +44,10 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            GoToNextLevel();
-        }
+        //if (Input.GetKeyDown(KeyCode.L))
+        //{
+        //    GoToNextLevel();
+        //}
 
         if (Input.GetKey(KeyCode.R))
         {

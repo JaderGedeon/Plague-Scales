@@ -108,7 +108,7 @@ Transform:
   m_GameObject: {fileID: 793326079684877310}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.673, y: 0, z: 0}
+  m_LocalPosition: {x: -1.55, y: 0.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -307,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 7554801463662348649}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.654, y: 0, z: 0}
+  m_LocalPosition: {x: 1.12, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -337,16 +337,16 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8338358032211728394}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.17428684, y: -0.096999995, z: -0.046}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -0.17428684, y: 0.1, z: -0.046}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1923527361517949956}
   - {fileID: 6763519708653696626}
   - {fileID: 6991218336620511863}
   m_Father: {fileID: 7231100831823754452}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!1 &8507556911326164571
 GameObject:
   m_ObjectHideFlags: 0
@@ -358,7 +358,6 @@ GameObject:
   - component: {fileID: 7231100831823754452}
   - component: {fileID: 3783049598898622720}
   - component: {fileID: 792327696743595868}
-  - component: {fileID: 3031572987503413890}
   m_Layer: 0
   m_Name: EnemyTorret
   m_TagString: Untagged
@@ -417,19 +416,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa7ee5b0df3eada4e95dd7477ec6705a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <SideBullets>k__BackingField: 0
---- !u!114 &3031572987503413890
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8507556911326164571}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7afb65146a6b8724f8762f1af2b17456, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_amountPoll: 2
-  m_bullet: {fileID: 5870165129603589072, guid: 93319e2f0d28ded45b88b8707d83412a,
-    type: 3}
+  <SideBullets>k__BackingField: 1

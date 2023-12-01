@@ -5,18 +5,19 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private float m_speed = 10;
-
+    private EnemyBullet m_Enemybullet;
 
     private Rigidbody m_rb;
     // Start is called before the first frame update
     void Start()
     {
+        m_Enemybullet = gameObject.GetComponent<EnemyBullet>();
         m_rb = GetComponent<Rigidbody>();
     }
 
     private void FixedUpdate()
     {
-        switch (EnemyBullet.Instance.SideBullets)
+        switch (m_Enemybullet.SideBullets)
         {
             case BulletSide.Left:
                 m_rb.velocity = -Vector3.right * m_speed;
