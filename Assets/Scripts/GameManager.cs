@@ -14,13 +14,13 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int m_currentLevelIndex = 0;
     [SerializeField] private GameObject m_currentLevel;
     [SerializeField] private List<GameObject> m_levels;
-    private ResetCounter m_reset;
     private float m_timer = 0f;
 
 
     public static GameManager Instance { get; private set; }
     public static bool IsPaused { get; private set; }
     public int counter { get; set; }
+    public ResetCounter m_reset;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         m_currentLevel = Instantiate(m_levels[m_currentLevelIndex]);
-        m_reset = FindObjectOfType<ResetCounter>();
+        //m_reset = FindObjectOfType<ResetCounter>();
     }
 
     private void Update()
@@ -55,6 +55,7 @@ public class GameManager : MonoBehaviour
             if (m_timer > 3)
             {
                 m_timer = 0f;
+                FindObjectOfType<AudioManager>().Play("Restart");
                 DestroyAndLoadLevel();
                 m_reset.IncrementCounter();
             }
@@ -131,6 +132,7 @@ public class GameManager : MonoBehaviour
         m_continueButton.interactable = true;
         m_mainMenu.SetActive(false);
         m_pauseButton.SetActive(true);
+        FindObjectOfType<AudioManager>().Play("Ambience");
     }
 
     public void Continue()

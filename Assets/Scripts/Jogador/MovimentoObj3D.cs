@@ -47,6 +47,7 @@ public class MovimentoObj3D : MonoBehaviour
             {
                 if (!m_airjumping)
                 {
+                    FindObjectOfType<AudioManager>().Play("Jump");
                     m_timer = m_temptime;
                     m_airjumping = true;
                     m_rb.velocity = new Vector3(m_rb.velocity.x, m_jump, 0);
