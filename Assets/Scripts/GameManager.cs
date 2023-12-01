@@ -99,6 +99,8 @@ public class GameManager : MonoBehaviour
         m_pauseMenu.SetActive(true);
         Time.timeScale = 0f;
         IsPaused = true;
+        FindObjectOfType<AudioManager>().inPause = true;
+        FindObjectOfType<AudioManager>().Pause();
     }
 
     public void ResumeInGameMenu() 
@@ -106,6 +108,8 @@ public class GameManager : MonoBehaviour
         m_pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         IsPaused = false;
+        FindObjectOfType<AudioManager>().inPause = false;
+        FindObjectOfType<AudioManager>().UnPause();
     }
 
     public void GoToMenuInPause() 

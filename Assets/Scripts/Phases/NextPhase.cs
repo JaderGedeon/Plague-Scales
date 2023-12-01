@@ -12,6 +12,7 @@ public class NextPhase : MonoBehaviour
         if (other.gameObject.CompareTag(k_Player)) 
         {
             GameManager.Instance.GoToNextLevel();
+            FindObjectOfType<AudioManager>().Play("Completed");
         }
     }
 }

@@ -21,7 +21,7 @@ public class PlayerArtifactManager : MonoBehaviour
         m_currentArtifact = artifact.gameObject;
         m_influenceRadiusRenderer.enabled = true;
         m_influenceRadiusRenderer.material.SetColor("_GlowColor", artifact.Color);
-
+        FindObjectOfType<AudioManager>().Play("Catch");
         m_currentArtifact.SetActive(false);
     }
 
@@ -32,7 +32,7 @@ public class PlayerArtifactManager : MonoBehaviour
             if (m_currentArtifact != null)
             {
                 StartCoroutine(DropArtifact());
-
+                FindObjectOfType<AudioManager>().Play("Drop");
                 m_influenceRadiusRenderer.enabled = false;
                 m_currentArtifact = null;
                 m_artifactHandler.ArtifactType = ArtifactType.None;

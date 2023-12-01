@@ -7785,88 +7785,106 @@ MonoBehaviour:
   sounds:
   - name: Move1
     clip: {fileID: 8300000, guid: a061b3a6155fd594e843623e891d19f7, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Move2
     clip: {fileID: 8300000, guid: 2ceb78afe1d5d2545ba7b1a68a09e591, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Jump
     clip: {fileID: 8300000, guid: 882a537caf4c735449a6a721f8bd68f2, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Restart
     clip: {fileID: 8300000, guid: 359f50a9694f6b94d883ec93934197b5, type: 3}
     volume: 0.3
     pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Catch
     clip: {fileID: 8300000, guid: 0a9ebff0d8407e54eae8f25b3c7c86ba, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Drop
     clip: {fileID: 8300000, guid: 8b465b390f3e290428d0c4d649a3c27a, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Completed
     clip: {fileID: 8300000, guid: caeca74c3cd2b1c48927578cf8f978a1, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: ObjMax
     clip: {fileID: 8300000, guid: f85240f17a1fb1b41983e97aec072190, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: ObjMin
     clip: {fileID: 8300000, guid: b4bbb044b70d8434aaaf35ace41a1938, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Explosion
     clip: {fileID: 8300000, guid: ec2e3cc23a297024e98a004ddf2e7498, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Waterdrop1
     clip: {fileID: 8300000, guid: e2bd09ece58706644ad8ccb7b913f5eb, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Waterdrop2
     clip: {fileID: 8300000, guid: b355bba5e791cf34ba35273f4fca4add, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 1
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
   - name: Ambience
     clip: {fileID: 8300000, guid: 69d4466801832d54a83ad690d2e3d21a, type: 3}
     volume: 0.02
     pitch: 1
     loop: 1
+    isMusic: 0
     source: {fileID: 0}
   - name: Roar
     clip: {fileID: 8300000, guid: ab1caf4b91cc1654aafa8d6363066aaa, type: 3}
-    volume: 0
-    pitch: 0
+    volume: 0.2
+    pitch: 1
     loop: 0
+    isMusic: 0
     source: {fileID: 0}
+  mixerGroup:
+  - {fileID: -3873131989378637524, guid: e699027288d3b5f49b84af0188305741, type: 2}
+  - {fileID: -232691354810651801, guid: e699027288d3b5f49b84af0188305741, type: 2}
+  inPause: 0
 --- !u!4 &1588804551
 Transform:
   m_ObjectHideFlags: 0
